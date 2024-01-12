@@ -60,18 +60,17 @@ public class UserInterface {
             double  eisKostenNetto      = bestellungsDatenLoop.getEisKostenNetto();
 
             System.out.print((zaehler + 1) + ". Bestellung \n");
-            System.out.printf("Wein Name:                         %s\n", name);
+            System.out.printf("Wein Name                        : %s   \n", name);
             System.out.printf("Preis pro GetraenkFlasche (netto): %s €.\n", preis);
-            System.out.printf("Menge die Flaschen:                %s Falschen.\n", menge);
+            System.out.printf("Menge die Flaschen               : %s Falschen.\n", menge);
             //#######################################################################################
             // Gesamtpreis berechnen
-            System.out.printf("Gesamtpreis (netto):               %s €.\n", nettoPreis);
-            System.out.printf("Steuer:                            %s €.\n", steuer);
+            System.out.printf("Gesamtpreis (netto)              : %s €.\n", nettoPreis);
+            System.out.printf("Steuer                           : %s €.\n", steuer);
             if (eisKostenNetto != 0){
-                System.out.printf("Gesamt EisKosten (netto):          %s €.\n", eisKostenNetto);
-
+                System.out.printf("Gesamt EisKosten (netto)     : %s €.\n", eisKostenNetto);
             }
-            System.out.printf("Gesamtpreis (brutto):              %s €.\n", bruttoPreis);
+            System.out.printf("Gesamtpreis (brutto)             : %s €.\n", bruttoPreis);
 
             //#######################################################################################
             // Katron Anzahl berechnen
