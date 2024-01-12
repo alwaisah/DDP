@@ -31,8 +31,6 @@ public class UserInterface {
             int     eisWuerfelMenge         = eisWuerfelMengeEinlesen(eisWuerfelBestaetigung);
             int     flaschenProKarton       = flaschenProKartonEinlesen();
 
-//            Wein einWein                        = new Wein(name, preis);
-//            Saft einSaft                        = new Saft(name, preis);
             GetraenkFlasche einGetraenkFlasche  = new GetraenkFlasche(name, preis);
             BestellungsDaten bestellungsDaten   = new BestellungsDaten(einGetraenkFlasche, menge, flaschenProKarton, eisWuerfelMenge);
 
