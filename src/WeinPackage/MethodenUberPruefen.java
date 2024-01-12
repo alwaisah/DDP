@@ -12,7 +12,6 @@ public class MethodenUberPruefen {
 
         System.out.println(eisWuerfelMenge);
     }
-
     private static int eisWuerfelStueckEinlesen(String eisWuerfelBestaetigung) {
         Scanner scanner = new Scanner(System.in);
         int eisWuerfelStueckEingabe = 0;
