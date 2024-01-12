@@ -37,13 +37,7 @@ class BestellungsDaten {
         this.eisWuerfelMenge    = eisWuerfelMenge;
     }
     private BestellungsDaten(){
-
     }
-    // Ende Konstraktor
-    // Start Methods
-
-
-    //Ende Methods
     // Start Getter und Setter Methods
     public GetraenkFlasche getEinGetreankFlasche() {
         return einGetreankFlasche;

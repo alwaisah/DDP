@@ -69,7 +69,6 @@ public class UserInterface {
                 System.out.printf("Gesamt EisKosten (netto)     : %s €.\n", eisKostenNetto);
             }
             System.out.printf("Gesamtpreis (brutto)             : %s €.\n", bruttoPreis);
-
             //#######################################################################################
             // Katron Anzahl berechnen
             String kartonsMeldung = kartonsMeldung(menge, flaschenProKarton);
@@ -172,7 +171,6 @@ public class UserInterface {
             try {
                 System.out.print("Möchten Sie Ihr Gericht mit Eis Würfel serviert bekommen? ");
                 eisWuerfelBestaetigung = scanner.nextLine();
-
                 for (int i = 0; i < bestaetigungsListe.size(); i++) {
                     if (eisWuerfelBestaetigung.equalsIgnoreCase(bestaetigungsListe.get(i))){
                         return eisWuerfelBestaetigung;
