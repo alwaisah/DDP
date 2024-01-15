@@ -1,4 +1,4 @@
 package WeinPackage;
 
-public class testen {
+class testen {
 }
