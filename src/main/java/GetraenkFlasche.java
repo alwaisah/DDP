@@ -1,5 +1,3 @@
-package WeinPackage;
-
 public class GetraenkFlasche {
     private String name;
     private double preis;
@@ -10,7 +8,7 @@ public class GetraenkFlasche {
     public GetraenkFlasche(){
     }
     public String getName() {
-        return name;
+        return name + "X";
     }
     public void setName(String name) {
         this.name = name;

@@ -1,4 +1,0 @@
-package WeinPackage;
-
-class testen {
-}

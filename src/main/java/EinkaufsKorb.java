@@ -1,5 +1,3 @@
-package WeinPackage;
-
 public class EinkaufsKorb {
     // Methode zur Berechnung des Gesamtpreises (netto)
     public double berechneGesamteNettoPreis(BestellungsDaten bestellungsDaten, GetraenkFlasche einGetraenkFlasche){

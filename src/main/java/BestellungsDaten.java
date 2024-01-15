@@ -1,5 +1,3 @@
-package WeinPackage;
-
 class BestellungsDaten {
 
     private GetraenkFlasche einGetreankFlasche;

@@ -1,5 +1,3 @@
-package WeinPackage;
-
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
@@ -112,13 +110,13 @@ public class UserInterface {
                 System.out.print("Möchten Sie Weins, Saft oder beide Bestellen? ");
                 einkaufsDatenEingabe = scanner.nextLine();
 
-                for (int i = 0; i < bestaetigungsListe.size(); i++) {
-                    if (einkaufsDatenEingabe.equalsIgnoreCase(bestaetigungsListe.get(i))){
+                for (String getBestaetigungsListe : bestaetigungsListe) {
+                    if (einkaufsDatenEingabe.equalsIgnoreCase(getBestaetigungsListe)){
                         return einkaufsDatenEingabe;
                     }
                 }
-                for (int i = 0; i < bestaetigungsListe.size(); i++) {
-                    if (!einkaufsDatenEingabe.equalsIgnoreCase(bestaetigungsListe.get(i))){
+                for (String getBestaetigungsListe : bestaetigungsListe) {
+                    if (!einkaufsDatenEingabe.equalsIgnoreCase(getBestaetigungsListe)){
                         throw new IllegalArgumentException("IllegalArgumentException ERROR!");
                     }
                 }
@@ -162,7 +160,7 @@ public class UserInterface {
         }
         return weinName;
     }
-    // Methode, um die Eingabe zu Überprüfen, ob der Kunde Eis haben möchte oder nicht
+    // Methode, um die Eingabe zu überprüfen, ob der Kunde Eis haben möchte oder nicht
     private static String eisWuerfelBestaetigungsEinlesen() {
         Scanner scanner = new Scanner(System.in);
         String eisWuerfelBestaetigung;
