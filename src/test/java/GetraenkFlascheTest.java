@@ -1,13 +1,15 @@
 import org.junit.Test;
 
+import java.math.BigDecimal;
+
 import static org.junit.Assert.*;
 
 public class GetraenkFlascheTest {
 
     @Test
     public void getName() {
-//        GetraenkFlasche testFlasche = new GetraenkFlasche("Rotwein");
-//        assertEquals("Rotwein", testFlasche.getName());
+        GetraenkFlasche testFlasche = new GetraenkFlasche("Rotwein", BigDecimal.valueOf(5));
+        assertEquals("Rotwein", testFlasche.getName());
     }
 
     @Test
@@ -16,9 +18,10 @@ public class GetraenkFlascheTest {
 
     @Test
     public void getPreis() {
-//        GetraenkFlasche testFlasche = new GetraenkFlasche("Rotwein", 5);
+        BigDecimal bigDecimal = BigDecimal.valueOf(5);
+        GetraenkFlasche testFlasche = new GetraenkFlasche("Rotwein", BigDecimal.valueOf(5));
 //
-//        assertEquals(5, testFlasche.getPreis());
+        assertEquals(BigDecimal.valueOf(5), testFlasche.getPreis());
 
     }
 
