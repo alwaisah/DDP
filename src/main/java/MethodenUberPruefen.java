@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class MethodenUberPruefen {
+class MethodenUberPruefen {
     public static void main(String[] args) {
         String eisWuerfelBestaetigung = "jA";
         int eisWuerfelMenge = eisWuerfelStueckEinlesen(eisWuerfelBestaetigung);

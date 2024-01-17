@@ -1,22 +1,24 @@
-public class GetraenkFlasche {
+import java.math.BigDecimal;
+
+class GetraenkFlasche {
     private String name;
-    private double preis;
-    public GetraenkFlasche(String name, double preis){
+    private BigDecimal preis;
+    public GetraenkFlasche(String name, BigDecimal preis){
         this.name  = name;
         this.preis = preis;
     }
     public GetraenkFlasche(){
     }
     public String getName() {
-        return name + "X";
+        return name;
     }
     public void setName(String name) {
         this.name = name;
     }
-    public double getPreis() {
+    public BigDecimal getPreis() {
         return preis;
     }
-    public void setPreis(double preis) {
+    public void setPreis(BigDecimal preis) {
         this.preis = preis;
     }
 }

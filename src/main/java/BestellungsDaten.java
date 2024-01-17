@@ -1,12 +1,14 @@
+import java.math.BigDecimal;
+
 class BestellungsDaten {
 
     private GetraenkFlasche einGetreankFlasche;
     private Wein einWein;
     private Saft einSaft;
-    private int menge;
-    private double nettoPreis;
-    private double bruttoPreis;
-    private double steuer;
+    private BigDecimal menge;
+    private BigDecimal nettoPreis;
+    private BigDecimal bruttoPreis;
+    private BigDecimal steuer;
     private int kartonsAnzahl;
     private int verbleibendeFlaschen;
     private int flaschenProKarton;
@@ -15,7 +17,7 @@ class BestellungsDaten {
     private double eisKostenNetto;
 
     // Start Konstraktor
-    public BestellungsDaten(Wein einWein, Saft einSaft, int menge, double nettoPreis, double bruttoPreis, double steuer, int kartonsAnzahl,
+    public BestellungsDaten(Wein einWein, Saft einSaft, BigDecimal menge, BigDecimal nettoPreis, BigDecimal bruttoPreis, BigDecimal steuer, int kartonsAnzahl,
                             int verbleibendeFlaschen, int flaschenProKarton, int verschiedeneEinkaufsDaten){
         this.einWein                    = einWein;
         this.einSaft                    = einSaft;
@@ -28,13 +30,13 @@ class BestellungsDaten {
         this.flaschenProKarton          = flaschenProKarton;
         this.verschiedeneEinkaufsDaten  = verschiedeneEinkaufsDaten;
     }
-    public BestellungsDaten(GetraenkFlasche einGetreankFlasche, int menge, int flaschenProKarton, int eisWuerfelMenge){
+    public BestellungsDaten(GetraenkFlasche einGetreankFlasche, BigDecimal menge, int flaschenProKarton, int eisWuerfelMenge){
         this.einGetreankFlasche = einGetreankFlasche;
         this.menge              = menge;
         this.flaschenProKarton  = flaschenProKarton;
         this.eisWuerfelMenge    = eisWuerfelMenge;
     }
-    private BestellungsDaten(){
+    public BestellungsDaten(){
     }
     // Start Getter und Setter Methods
     public GetraenkFlasche getEinGetreankFlasche() {
@@ -49,28 +51,28 @@ class BestellungsDaten {
     public void setEinWeinFlasche(Wein einWein) {
         this.einWein = einWein;
     }
-    public int getMenge() {
+    public BigDecimal getMenge() {
         return menge;
     }
-    public void setMenge(int menge) {
+    public void setMenge(BigDecimal menge) {
         this.menge = menge;
     }
-    public double getNettoPreis() {
+    public BigDecimal getNettoPreis() {
         return nettoPreis;
     }
-    public void setNettoPreis(double nettoPreis) {
+    public void setNettoPreis(BigDecimal nettoPreis) {
         this.nettoPreis = nettoPreis;
     }
-    public double getBruttoPreis() {
+    public BigDecimal getBruttoPreis() {
         return bruttoPreis;
     }
-    public void setBruttoPreis(double bruttoPreis) {
+    public void setBruttoPreis(BigDecimal bruttoPreis) {
         this.bruttoPreis = bruttoPreis;
     }
-    public double getSteuer() {
+    public BigDecimal getSteuer() {
         return steuer;
     }
-    public void setSteuer(double steuer) {
+    public void setSteuer(BigDecimal steuer) {
         this.steuer = steuer;
     }
     public int getKartonsAnzahl() {

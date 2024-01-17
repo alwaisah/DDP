@@ -1,3 +1,4 @@
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
@@ -23,8 +24,8 @@ public class UserInterface {
         for ( zaehler = 0; zaehler < mengeEinkaufsDaten ; zaehler++) {
             System.out.print((zaehler + 1) + ". Bestellung \n");
             String  name                    = nameEinlesen(bestaetigungsEinkaufsDaten);
-            double  preis                   = preisEinlesen(name);
-            int     menge                   = mengeEinlesen();
+            BigDecimal  preis                   = BigDecimal.valueOf(preisEinlesen(name));
+            BigDecimal  menge                   = BigDecimal.valueOf(mengeEinlesen());
             String  eisWuerfelBestaetigung  = eisWuerfelBestaetigungsEinlesen();
             int     eisWuerfelMenge         = eisWuerfelMengeEinlesen(eisWuerfelBestaetigung);
             int     flaschenProKarton       = flaschenProKartonEinlesen();
@@ -47,11 +48,11 @@ public class UserInterface {
         zaehler = 0;
         for (BestellungsDaten bestellungsDatenLoop : weinBestellungsList){
             String  name                = bestellungsDatenLoop.getEinGetreankFlasche().getName();
-            double  preis               = bestellungsDatenLoop.getEinGetreankFlasche().getPreis();
-            int     menge               = bestellungsDatenLoop.getMenge();
-            double  nettoPreis          = bestellungsDatenLoop.getNettoPreis();
-            double  steuer              = bestellungsDatenLoop.getSteuer();
-            double  bruttoPreis         = bestellungsDatenLoop.getBruttoPreis();
+            BigDecimal preis               = bestellungsDatenLoop.getEinGetreankFlasche().getPreis();
+            BigDecimal menge               = bestellungsDatenLoop.getMenge();
+            BigDecimal nettoPreis          = bestellungsDatenLoop.getNettoPreis();
+            BigDecimal steuer              = bestellungsDatenLoop.getSteuer();
+            BigDecimal bruttoPreis         = bestellungsDatenLoop.getBruttoPreis();
             int     flaschenProKarton   = bestellungsDatenLoop.getFlaschenProKarton();
             double  eisKostenNetto      = bestellungsDatenLoop.getEisKostenNetto();
 
@@ -64,7 +65,7 @@ public class UserInterface {
             System.out.printf("Gesamtpreis (netto)              : %s €.\n", nettoPreis);
             System.out.printf("Steuer                           : %s €.\n", steuer);
             if (eisKostenNetto != 0){
-                System.out.printf("Gesamt EisKosten (netto)     : %s €.\n", eisKostenNetto);
+                System.out.printf("Gesamt EisKosten (netto)         : %s €.\n", eisKostenNetto);
             }
             System.out.printf("Gesamtpreis (brutto)             : %s €.\n", bruttoPreis);
             //#######################################################################################
@@ -273,11 +274,11 @@ public class UserInterface {
         }
         return flaschenProKarton;
     }
-    private static String kartonsMeldung(int menge, int flaschenProKarton) {
-        int kartonsAnzahl        = menge / flaschenProKarton;
-        int verbleibendeFlaschen = menge % flaschenProKarton;
+    private static String kartonsMeldung(BigDecimal menge, int flaschenProKarton) {
+        BigDecimal kartonsAnzahl        = BigDecimal.valueOf(menge.intValue() /flaschenProKarton);
+        BigDecimal verbleibendeFlaschen = BigDecimal.valueOf(menge.intValue() % flaschenProKarton);
 
-        if (verbleibendeFlaschen > 0) {
+        if (verbleibendeFlaschen.intValue() > 0) {
             return "Hinweis: Ihre Bestellung wird in " + kartonsAnzahl + " Kartons und " + verbleibendeFlaschen + " einzelnen Flaschen versandt.\n Jeder Karton enthält " + flaschenProKarton + " Flaschen.\n\n";
         } else {
             return "Hinweis: Ihre Bestellung wird in "  + kartonsAnzahl + " Kartons versandt.\n Jeder Karton enthält " + flaschenProKarton + " Flaschen.\n\n";

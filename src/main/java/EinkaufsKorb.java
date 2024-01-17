@@ -1,13 +1,15 @@
-public class EinkaufsKorb {
+import java.math.BigDecimal;
+
+class EinkaufsKorb {
     // Methode zur Berechnung des Gesamtpreises (netto)
-    public double berechneGesamteNettoPreis(BestellungsDaten bestellungsDaten, GetraenkFlasche einGetraenkFlasche){
-        double nettoPreis = Math.round(100 * (bestellungsDaten.getMenge() * einGetraenkFlasche.getPreis())) / 100.0;
-        bestellungsDaten.setNettoPreis(nettoPreis);
+    public BigDecimal berechneGesamteNettoPreis(BestellungsDaten bestellungsDaten, GetraenkFlasche einGetraenkFlasche){
+        BigDecimal nettoPreis =  einGetraenkFlasche.getPreis().multiply(bestellungsDaten.getMenge());
+         bestellungsDaten.setNettoPreis(nettoPreis);
         return nettoPreis;
     }
     // Methode zur Berechnung der Steuer
-    public double berechneGesamteSteuer(BestellungsDaten bestellungsDaten) {
-        double steuer = Math.round(100 * (bestellungsDaten.getNettoPreis() * 0.19)) / 100.0;
+    public BigDecimal berechneGesamteSteuer(BestellungsDaten bestellungsDaten) {
+        BigDecimal steuer = bestellungsDaten.getNettoPreis().multiply(BigDecimal.valueOf(0.19));
         bestellungsDaten.setSteuer(steuer);
         return bestellungsDaten.getSteuer();
     }
@@ -18,10 +20,12 @@ public class EinkaufsKorb {
         return bestellungsDaten.getEisKostenNetto();
     }
     // Methode zur Berechnung des Gesamtpreises (brutto)
-    public double berechneGesamteBruttoPreis(BestellungsDaten bestellungsDaten) {
+    public BigDecimal berechneGesamteBruttoPreis(BestellungsDaten bestellungsDaten) {
         double steuer = Math.round(100 * (bestellungsDaten.getEisKostenNetto() * 0.19)) / 100.0;
         double eisKosten = Math.round(100 * (bestellungsDaten.getEisKostenNetto() + steuer)) / 100.0;
-        double bruttoPreis = Math.round(100 * ( bestellungsDaten.getNettoPreis() + bestellungsDaten.getSteuer() + eisKosten)) / 100.0;
+        BigDecimal bruttoPreis = bestellungsDaten.getNettoPreis()
+                .add(bestellungsDaten.getSteuer())
+                .add(BigDecimal.valueOf(eisKosten));
         bestellungsDaten.setBruttoPreis(bruttoPreis);
         return bestellungsDaten.getBruttoPreis();
     }
